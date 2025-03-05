@@ -28,7 +28,7 @@ export default function ProjectsPreview() {
     const [input1, setInput1] = useState(0);
     const [input2, setInput2] = useState(0);
     // FOR CALCULATOR P1
-    const [operator, setOperator] = useState("");
+    //const [operator, setOperator] = useState("");
 
     const outputElement = document.getElementById("output");
 
@@ -47,36 +47,42 @@ export default function ProjectsPreview() {
 
     function doSub() {
         let output = input1 - input2;
-        if (outputElement && Number(output) < 0) {
-            document.getElementById("output").style.color = "red";
+        if (outputElement != null) {
+            if (Number(output) < 0) {
+                document.getElementById("output").style.color = "red";
+            }
+            else {
+                document.getElementById("output").style.color = "black";
+            }
+            document.getElementById("output").innerHTML = String(output);
         }
-        else {
-            document.getElementById("output").style.color = "black";
-        }
-        document.getElementById("output").innerHTML = output;
-    }
+}
     function doDiv() {
         let output = input1 / input2;
-        if (outputElement && Number(output) < 0) {
-            document.getElementById("output").style.color = "red";
+        if (outputElement != null) {
+            if (Number(output) < 0) {
+                document.getElementById("output").style.color = "red";
+            }
+            else {
+                document.getElementById("output").style.color = "black";
+            }
+            document.getElementById("output").innerHTML = String(output);
         }
-        else {
-            document.getElementById("output").style.color = "black";
-        }
-        document.getElementById("output").innerHTML = String(output);
-    }
+}
     function doPow() {
         let output = 1;
-        for(let i = 0; i < input2; i++) {
-            output = output * input1;
+        if (outputElement != null) {
+            for(let i = 0; i < input2; i++) {
+                output = output * input1;
+            }
+            if (outputElement && Number(output) < 0) {
+                document.getElementById("output").style.color = "red";
+            }
+            else {
+                document.getElementById("output").style.color = "black";
+            }
+            document.getElementById("output").innerHTML = String(output);
         }
-        if (outputElement && Number(output) < 0) {
-            document.getElementById("output").style.color = "red";
-        }
-        else {
-            document.getElementById("output").style.color = "black";
-        }
-        document.getElementById("output").innerHTML = String(output);
     }
 
     return (
