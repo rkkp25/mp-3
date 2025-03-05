@@ -34,13 +34,15 @@ export default function ProjectsPreview() {
 
     function doAdd() {
         let output = input1 + input2;
-        if (outputElement &&  Number(output) < 0) {
-            document.getElementById("output").style.color = "red";
+        if (outputElement != null) {
+            if (Number(output) < 0) {
+                document.getElementById("output").style.color = "red";
+            }
+            else {
+                document.getElementById("output").style.color = "black";
+            }
+            document.getElementById("output").innerHTML = String(output);
         }
-        else {
-            document.getElementById("output").style.color = "black";
-        }
-        document.getElementById("output").innerHTML = String(output);
     }
 
     function doSub() {
@@ -75,33 +77,6 @@ export default function ProjectsPreview() {
             document.getElementById("output").style.color = "black";
         }
         document.getElementById("output").innerHTML = String(output);
-    }
-
-
-    // FOR CALCULATOR P2
-    function calculate() {
-        let output = 1;
-        if (operator.innerHTML==="+") {
-            output = input1 + input2;
-        }
-        if (operator.innerHTML==="-") {
-            output = input1 - input2;
-        }
-        if (operator.innerHTML==="/") {
-            output = input1 / input2;
-        }
-        if (operator.innerHTML==="**") {
-            for(let i = 0; i < input2; i++) {
-                output = output * input1;
-            }
-        }
-        if (outputElement && Number(output) < 0) {
-            document.getElementById("output2").style.color = "red";
-        }
-        else {
-            document.getElementById("output2").style.color = "black";
-        }
-        document.getElementById("output2").innerHTML = String(output);
     }
 
     return (
@@ -145,34 +120,6 @@ export default function ProjectsPreview() {
                 <StyledButton onClick={doDiv}>/</StyledButton>
                 <StyledButton onClick={doPow}>**</StyledButton>
                 <StyledP id="output"></StyledP>
-            </StyledDiv>
-
-            
-
-
-
-
-            <h2>Calculator Part 2!</h2>
-            <h4>I wanted to play around with useState and buttons more lol - choose an operand, and then click calculate!</h4>
-            <StyledDiv>
-            <StyledInput 
-                type="number"
-                placeholder="Input 1"
-                value={input1}
-                onChange={(e) => setInput1(Number(e.target.value))}
-            />
-            <StyledInput 
-                type="number"
-                placeholder="Input 2"
-                value={input2}
-                onChange={(e) => setInput2(Number(e.target.value))} 
-            />
-                <StyledButton onClick={(e) => setOperator(e.target.value)}>+</StyledButton>
-                <StyledButton onClick={(e) => setOperator(e.target.value)}>-</StyledButton>
-                <StyledButton onClick={(e) => setOperator(e.target.value)}>/</StyledButton>
-                <StyledButton onClick={(e) => setOperator(e.target.value)}>**</StyledButton>
-                <StyledButton onClick={calculate}>Calculate!</StyledButton>
-                <StyledP id="output2"></StyledP>
             </StyledDiv>
 
         </>
