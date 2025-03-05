@@ -25,25 +25,25 @@ const StyledP = styled.p`
 `
 
 export default function ProjectsPreview() {
-    const [input1, setInput1] = useState(0)
-    const [input2, setInput2] = useState(0)
+    const [input1, setInput1] = useState(0);
+    const [input2, setInput2] = useState(0);
     // FOR CALCULATOR P1
-    const [operator, setOperator] = useState(0)
+    const [operator, setOperator] = useState("");
 
     function doAdd() {
         let output = input1 + input2;
-        if (Number(output) < 0) {
+        if (Number(output) &&  Number(output) < 0) {
             document.getElementById("output").style.color = "red";
         }
         else {
             document.getElementById("output").style.color = "black";
         }
-        document.getElementById("output").innerHTML = output;
+        document.getElementById("output").innerHTML = String(output);
     }
 
     function doSub() {
         let output = input1 - input2;
-        if (Number(output) < 0) {
+        if (Number(output) && Number(output) < 0) {
             document.getElementById("output").style.color = "red";
         }
         else {
@@ -53,7 +53,7 @@ export default function ProjectsPreview() {
     }
     function doDiv() {
         let output = input1 / input2;
-        if (Number(output) < 0) {
+        if (Number(output) && Number(output) < 0) {
             document.getElementById("output").style.color = "red";
         }
         else {
@@ -66,7 +66,7 @@ export default function ProjectsPreview() {
         for(let i = 0; i < input2; i++) {
             output = output * input1;
         }
-        if (Number(output) < 0) {
+        if (Number(output) && Number(output) < 0) {
             document.getElementById("output").style.color = "red";
         }
         else {
@@ -93,7 +93,7 @@ export default function ProjectsPreview() {
                 output = output * input1;
             }
         }
-        if (Number(output) < 0) {
+        if (Number(output) && Number(output) < 0) {
             document.getElementById("output2").style.color = "red";
         }
         else {
@@ -165,10 +165,10 @@ export default function ProjectsPreview() {
                 value={input2}
                 onChange={(e) => setInput2(Number(e.target.value))} 
             />
-                <StyledButton onClick={(e) => setOperator(e.target)}>+</StyledButton>
-                <StyledButton onClick={(e) => setOperator(e.target)}>-</StyledButton>
-                <StyledButton onClick={(e) => setOperator(e.target)}>/</StyledButton>
-                <StyledButton onClick={(e) => setOperator(e.target)}>**</StyledButton>
+                <StyledButton onClick={(e) => setOperator("+")}>+</StyledButton>
+                <StyledButton onClick={(e) => setOperator("-")}>-</StyledButton>
+                <StyledButton onClick={(e) => setOperator("/")}>/</StyledButton>
+                <StyledButton onClick={(e) => setOperator("**")}>**</StyledButton>
                 <StyledButton onClick={calculate}>Calculate!</StyledButton>
                 <StyledP id="output2"></StyledP>
             </StyledDiv>
