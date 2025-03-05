@@ -30,18 +30,18 @@ export default function ProjectsPreview() {
     // FOR CALCULATOR P1
     //const [operator, setOperator] = useState("");
 
-    const outputElement = document.getElementById("output");
+    const outputElement = outputElement;
 
     function doAdd() {
         let output = input1 + input2;
         if (outputElement != null) {
             if (Number(output) < 0) {
-                document.getElementById("output").style.color = "red";
+                outputElement.style.color = "red";
             }
             else {
-                document.getElementById("output").style.color = "black";
+                outputElement.style.color = "black";
             }
-            document.getElementById("output").innerHTML = String(output);
+            outputElement.innerHTML = String(output);
         }
     }
 
@@ -49,24 +49,24 @@ export default function ProjectsPreview() {
         let output = input1 - input2;
         if (outputElement != null) {
             if (Number(output) < 0) {
-                document.getElementById("output").style.color = "red";
+                outputElement.style.color = "red";
             }
             else {
-                document.getElementById("output").style.color = "black";
+                outputElement.style.color = "black";
             }
-            document.getElementById("output").innerHTML = String(output);
+            outputElement.innerHTML = String(output);
         }
 }
     function doDiv() {
         let output = input1 / input2;
         if (outputElement != null) {
             if (Number(output) < 0) {
-                document.getElementById("output").style.color = "red";
+                outputElement.style.color = "red";
             }
             else {
-                document.getElementById("output").style.color = "black";
+                outputElement.style.color = "black";
             }
-            document.getElementById("output").innerHTML = String(output);
+            outputElement.innerHTML = String(output);
         }
 }
     function doPow() {
@@ -76,12 +76,12 @@ export default function ProjectsPreview() {
                 output = output * input1;
             }
             if (outputElement && Number(output) < 0) {
-                document.getElementById("output").style.color = "red";
+                outputElement.style.color = "red";
             }
             else {
-                document.getElementById("output").style.color = "black";
+                outputElement.style.color = "black";
             }
-            document.getElementById("output").innerHTML = String(output);
+            outputElement.innerHTML = String(output);
         }
     }
 
