@@ -167,10 +167,10 @@ export default function ProjectsPreview() {
                 value={input2}
                 onChange={(e) => setInput2(Number(e.target.value))} 
             />
-                <StyledButton onClick={setOperator("+")}>+</StyledButton>
-                <StyledButton onClick={setOperator("-")}>-</StyledButton>
-                <StyledButton onClick={setOperator("/")}>/</StyledButton>
-                <StyledButton onClick={setOperator("**")}>**</StyledButton>
+                <StyledButton onClick={(e) => setOperator(e.target.value)}>+</StyledButton>
+                <StyledButton onClick={(e) => setOperator(e.target.value)}>-</StyledButton>
+                <StyledButton onClick={(e) => setOperator(e.target.value)}>/</StyledButton>
+                <StyledButton onClick={(e) => setOperator(e.target.value)}>**</StyledButton>
                 <StyledButton onClick={calculate}>Calculate!</StyledButton>
                 <StyledP id="output2"></StyledP>
             </StyledDiv>
