@@ -30,7 +30,7 @@ export default function ProjectsPreview() {
     // FOR CALCULATOR P1
     //const [operator, setOperator] = useState("");
 
-    const outputElement = outputElement;
+    const outputElement = document.getElementById("output");
 
     function doAdd() {
         let output = input1 + input2;
