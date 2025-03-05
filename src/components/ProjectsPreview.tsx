@@ -61,7 +61,7 @@ export default function ProjectsPreview() {
         else {
             document.getElementById("output").style.color = "black";
         }
-        document.getElementById("output").innerHTML = output;
+        document.getElementById("output").innerHTML = String(output);
     }
     function doPow() {
         let output = 1;
@@ -74,7 +74,7 @@ export default function ProjectsPreview() {
         else {
             document.getElementById("output").style.color = "black";
         }
-        document.getElementById("output").innerHTML = output;
+        document.getElementById("output").innerHTML = String(output);
     }
 
 
@@ -101,7 +101,7 @@ export default function ProjectsPreview() {
         else {
             document.getElementById("output2").style.color = "black";
         }
-        document.getElementById("output2").innerHTML = output;
+        document.getElementById("output2").innerHTML = String(output);
     }
 
     return (
@@ -167,10 +167,10 @@ export default function ProjectsPreview() {
                 value={input2}
                 onChange={(e) => setInput2(Number(e.target.value))} 
             />
-                <StyledButton onClick={(e) => setOperator("+")}>+</StyledButton>
-                <StyledButton onClick={(e) => setOperator("-")}>-</StyledButton>
-                <StyledButton onClick={(e) => setOperator("/")}>/</StyledButton>
-                <StyledButton onClick={(e) => setOperator("**")}>**</StyledButton>
+                <StyledButton onClick={setOperator("+")}>+</StyledButton>
+                <StyledButton onClick={setOperator("-")}>-</StyledButton>
+                <StyledButton onClick={setOperator("/")}>/</StyledButton>
+                <StyledButton onClick={setOperator("**")}>**</StyledButton>
                 <StyledButton onClick={calculate}>Calculate!</StyledButton>
                 <StyledP id="output2"></StyledP>
             </StyledDiv>
