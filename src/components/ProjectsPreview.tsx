@@ -30,9 +30,11 @@ export default function ProjectsPreview() {
     // FOR CALCULATOR P1
     const [operator, setOperator] = useState("");
 
+    const outputElement = document.getElementById("output");
+
     function doAdd() {
         let output = input1 + input2;
-        if (Number(output) &&  Number(output) < 0) {
+        if (outputElement &&  Number(output) < 0) {
             document.getElementById("output").style.color = "red";
         }
         else {
@@ -43,7 +45,7 @@ export default function ProjectsPreview() {
 
     function doSub() {
         let output = input1 - input2;
-        if (Number(output) && Number(output) < 0) {
+        if (outputElement && Number(output) < 0) {
             document.getElementById("output").style.color = "red";
         }
         else {
@@ -53,7 +55,7 @@ export default function ProjectsPreview() {
     }
     function doDiv() {
         let output = input1 / input2;
-        if (Number(output) && Number(output) < 0) {
+        if (outputElement && Number(output) < 0) {
             document.getElementById("output").style.color = "red";
         }
         else {
@@ -66,7 +68,7 @@ export default function ProjectsPreview() {
         for(let i = 0; i < input2; i++) {
             output = output * input1;
         }
-        if (Number(output) && Number(output) < 0) {
+        if (outputElement && Number(output) < 0) {
             document.getElementById("output").style.color = "red";
         }
         else {
@@ -93,7 +95,7 @@ export default function ProjectsPreview() {
                 output = output * input1;
             }
         }
-        if (Number(output) && Number(output) < 0) {
+        if (outputElement && Number(output) < 0) {
             document.getElementById("output2").style.color = "red";
         }
         else {
