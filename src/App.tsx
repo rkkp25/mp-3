@@ -78,8 +78,11 @@ const router = createBrowserRouter(
 
 export function App() {
     const currentPath=useParams();
+    console.log(currentPath)
     let lastValue=Object.values(currentPath).pop() || "";
     lastValue = lastValue.charAt(0).toUpperCase() + lastValue.slice(1);
+    console.log("lastValue");
+    console.log(lastValue);
     useEffect(()=>{
         if(lastValue===""){
             document.title="Home | Resume";
