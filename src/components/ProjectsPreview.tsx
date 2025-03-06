@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { styled } from "styled-components";
 import CalculatorPreview from "./CalculatorPreview";
 import StyledDiv from "../styles/StyledDiv";
 import StyledP from "../styles/StyledP";
