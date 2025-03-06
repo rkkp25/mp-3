@@ -1,90 +1,10 @@
 import { useState } from "react";
 import { styled } from "styled-components";
-
-const StyledInput = styled.input`
-    width: 10%;
-    padding: 0.5vw;
-    margin: 0 1vw;
-`;
-
-const StyledButton = styled.button`
-    padding: 0.5vw;
-    margin: 0 1vw;
-`;
-
-const StyledDiv = styled.div`
-    display: flex;
-    flex-direction: row;
-`
-
-const StyledP = styled.p`
-    padding: 0;
-    margin: 0;
-    vertical-align: middle;
-    line-height: 1.6;
-`
+import CalculatorPreview from "./CalculatorPreview";
+import StyledDiv from "../styles/StyledDiv";
+import StyledP from "../styles/StyledP";
 
 export default function ProjectsPreview() {
-    const [input1, setInput1] = useState(0);
-    const [input2, setInput2] = useState(0);
-    // FOR CALCULATOR P1
-    //const [operator, setOperator] = useState("");
-
-    const outputElement = document.getElementById("output");
-
-    function doAdd() {
-        let output = input1 + input2;
-        if (outputElement != null) {
-            if (Number(output) < 0) {
-                outputElement.style.color = "red";
-            }
-            else {
-                outputElement.style.color = "black";
-            }
-            outputElement.innerHTML = String(output);
-        }
-    }
-
-    function doSub() {
-        let output = input1 - input2;
-        if (outputElement != null) {
-            if (Number(output) < 0) {
-                outputElement.style.color = "red";
-            }
-            else {
-                outputElement.style.color = "black";
-            }
-            outputElement.innerHTML = String(output);
-        }
-}
-    function doDiv() {
-        let output = input1 / input2;
-        if (outputElement != null) {
-            if (Number(output) < 0) {
-                outputElement.style.color = "red";
-            }
-            else {
-                outputElement.style.color = "black";
-            }
-            outputElement.innerHTML = String(output);
-        }
-}
-    function doPow() {
-        let output = 1;
-        if (outputElement != null) {
-            for(let i = 0; i < input2; i++) {
-                output = output * input1;
-            }
-            if (outputElement && Number(output) < 0) {
-                outputElement.style.color = "red";
-            }
-            else {
-                outputElement.style.color = "black";
-            }
-            outputElement.innerHTML = String(output);
-        }
-    }
-
     return (
         <>
             <h2>BU CS411 Full-stack Development Project</h2>
@@ -107,27 +27,7 @@ export default function ProjectsPreview() {
             <p>A reinforcement learning based AI that over time, learns how to play tetris by taking in rewards and discounts from each move it made, learning from its mistakes or successes, and learning how to earn a higher score.</p>
             <a target="_blank" href="https://github.com/kkpeters/Tetris-RL-AI">GitHub Link</a>
 
-            <h2>Calculator</h2>
-            <StyledDiv>
-                <StyledInput 
-                    type="number"
-                    placeholder="Input 1"
-                    value={input1}
-                    onChange={(e) => setInput1(Number(e.target.value))}
-                />
-                <StyledInput 
-                    type="number"
-                    placeholder="Input 2"
-                    value={input2}
-                    onChange={(e) => setInput2(Number(e.target.value))} 
-                />
-                <StyledButton onClick={doAdd}>+</StyledButton>
-                <StyledButton onClick={doSub}>-</StyledButton>
-                <StyledButton onClick={doDiv}>/</StyledButton>
-                <StyledButton onClick={doPow}>**</StyledButton>
-                <StyledP id="output"></StyledP>
-            </StyledDiv>
-
+            <CalculatorPreview />
         </>
     )
 }

@@ -55,7 +55,7 @@ export function Root() {
                     <Nav />
                     <StyledMain>
                         <Routes>
-                            <Route path={`/*`} element={<HomePreview />}/>
+                            <Route path={`/`} element={<HomePreview />}/>
                             <Route path={`/education`} element={<EducationPreview />}/>
                             <Route path={`/experience`} element={<ExperiencePreview />}/>
                             <Route path={`/skills`} element={<SkillsPreview />}/>
@@ -77,6 +77,7 @@ const router = createBrowserRouter(
 
 
 export function App() {
+
     const currentPath=useParams();
     console.log(currentPath)
     let lastValue=Object.values(currentPath).pop() || "";

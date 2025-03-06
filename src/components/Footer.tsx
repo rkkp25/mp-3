@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { Link } from "react-router";
 
 const StyledFooter = styled.footer`
     padding: 1vw;
@@ -9,7 +10,8 @@ export default function Footer() {
     return (
         <>
             <StyledFooter>
-                <p>All rights reserved.</p>
+                <p>All rights reserved by Kristine Peters <Link to={`/credits`}>Credits</Link> &copy;</p>
+
             </StyledFooter>
         </>
     )
