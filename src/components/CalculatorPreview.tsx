@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { styled } from "styled-components";
-import StyledDiv from "../styles/StyledDiv";
-import StyledP from "../styles/StyledP";
 
 const StyledInput = styled.input`
     width: 10%;
@@ -12,6 +10,18 @@ const StyledInput = styled.input`
 const StyledButton = styled.button`
     padding: 0.5vw;
     margin: 0 1vw;
+`;
+
+const StyledDiv = styled.div`
+    display: flex;
+    flex-direction: row;
+`;
+
+const StyledP = styled.p`
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+    line-height: 1.6;
 `;
 
 export default function CalculatorPreview() {

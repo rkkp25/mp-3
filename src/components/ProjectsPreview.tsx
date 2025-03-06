@@ -1,6 +1,4 @@
 import CalculatorPreview from "./CalculatorPreview";
-import StyledDiv from "../styles/StyledDiv";
-import StyledP from "../styles/StyledP";
 
 export default function ProjectsPreview() {
     return (
