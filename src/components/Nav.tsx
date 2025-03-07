@@ -17,7 +17,7 @@ const StyledLink = styled(Link)`
 
     @media (max-width: 900px) {
         padding: 0.5vw;
-        margin: 0 2vw;
+        margin: 0 1vw;
         font-size: calc(2px + 1.7vw);
     }
 

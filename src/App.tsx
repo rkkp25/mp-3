@@ -24,7 +24,7 @@ const StyledWrapper = styled.div`
     font-family: monospace;
 
     @media (max-width: 900px) {
-        width: 100%;
+        width: 90%;
     }
 `;
 
