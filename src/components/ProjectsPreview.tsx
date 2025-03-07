@@ -1,6 +1,14 @@
 import CalculatorPreview from "./CalculatorPreview";
+import {useParams} from "react-router-dom";
 
 export default function ProjectsPreview() {
+    const currentPath=useParams();
+    console.log(currentPath)
+    let lastValue=Object.values(currentPath).pop() || "";
+    lastValue = lastValue.charAt(0).toUpperCase() + lastValue.slice(1);
+    console.log("lastValue");
+    console.log(lastValue);
+    document.title = lastValue + " | Resume";
     return (
         <>
             <h2>BU CS411 Full-stack Development Project</h2>

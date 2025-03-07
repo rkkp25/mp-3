@@ -1,6 +1,6 @@
 // React Imports 
-import { Routes, Route, createBrowserRouter, RouterProvider, useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { Routes, Route, createBrowserRouter, RouterProvider } from "react-router-dom";
+// import { useEffect } from "react";
 import { styled } from "styled-components";
 
 // Components
@@ -78,19 +78,7 @@ const router = createBrowserRouter(
 
 export function App() {
 
-    const currentPath=useParams();
-    console.log(currentPath)
-    let lastValue=Object.values(currentPath).pop() || "";
-    lastValue = lastValue.charAt(0).toUpperCase() + lastValue.slice(1);
-    console.log("lastValue");
-    console.log(lastValue);
-    useEffect(()=>{
-        if(lastValue===""){
-            document.title="Home | Resume";
-        }else {
-            document.title=lastValue+" | Resume";
-        }
-    },[lastValue])
+
 
     return (
         <>

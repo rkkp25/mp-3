@@ -1,4 +1,13 @@
+import {useParams} from "react-router-dom";
+
 export default function EducationPreview() {
+    const currentPath=useParams();
+    console.log(currentPath)
+    let lastValue=Object.values(currentPath).pop() || "";
+    lastValue = lastValue.charAt(0).toUpperCase() + lastValue.slice(1);
+    console.log("lastValue");
+    console.log(lastValue);
+    document.title = lastValue + " | Resume";
     return (
         <>
             <h2>Wellesley High School</h2>

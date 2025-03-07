@@ -1,4 +1,6 @@
 import { styled } from "styled-components";
+import {useParams} from "react-router-dom";
+// import {useEffect} from "react";
 
 const StyledImg = styled.img`
     width: 50%;
@@ -32,6 +34,14 @@ const StyledInnerDiv = styled.div`
 `;
 
 export default function HomePreview() {
+    const currentPath=useParams();
+    console.log(currentPath)
+    let lastValue=Object.values(currentPath).pop() || "";
+    lastValue = lastValue.charAt(0).toUpperCase() + lastValue.slice(1);
+    console.log("lastValue");
+    console.log(lastValue);
+    document.title = "Home | Resume";
+
     return (
         <>
             <StyledOuterDiv>
