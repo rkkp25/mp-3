@@ -35,6 +35,8 @@ export default function Header() {
     else {
         pathname = pathname.charAt(1).toUpperCase() + pathname.slice(2);
     }
+    document.title = pathname + " | Resume";
+
 
 
     return (

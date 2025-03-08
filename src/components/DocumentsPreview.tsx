@@ -1,5 +1,4 @@
 import { styled } from "styled-components";
-import {useParams} from "react-router-dom";
 
 const StyledA = styled.a`
     color: black;
@@ -20,13 +19,6 @@ const StyledDiv = styled.div`
 `;
 
 export default function DocumentsPreview() {
-    const currentPath=useParams();
-    console.log(currentPath)
-    let lastValue=Object.values(currentPath).pop() || "";
-    lastValue = lastValue.charAt(0).toUpperCase() + lastValue.slice(1);
-    console.log("lastValue");
-    console.log(lastValue);
-    document.title = lastValue + " | Resume";
     return (
         <>
             <h2>Download a PDF of my resume <StyledA target="_blank" href="kristine-peters-resume.pdf">here</StyledA>!</h2>
