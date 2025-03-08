@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom";
 // import {useEffect} from "react";
 
 const StyledImg = styled.img`
-    width: 50%;
+    max-width: 50%;
     border: double 5px #49b385;
     border-radius: 10%;
     margin-top: 1vw;
