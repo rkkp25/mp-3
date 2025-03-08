@@ -10,7 +10,7 @@ const StyledImg = styled.img`
 
     @media (max-width: 900px) {
         margin: auto;
-        width: 60%;
+        max-width: 60%;
     }
 `;
 
